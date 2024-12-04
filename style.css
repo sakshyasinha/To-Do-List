@@ -1,25 +1,27 @@
 :root {
-	--dark: #374151;
-	--darker: #1F2937;
-	--darkest: #111827;
-	--grey: #6B7280;
-	--pink: #EC4899;
-	--purple: #8B5CF6;
-	--light: #EEE;
+	--dark: #1e293b; /* Slightly lighter dark for better readability */
+	--darker: #334155; /* Moderate contrast */
+	--darkest: #0f172a; /* Slightly lighter for background contrast */
+	--grey: #94a3b8; /* Softer grey for placeholders and secondary text */
+	--pink: #f472b6; /* Lighter pink for a softer look */
+	--purple: #7c3aed; /* Bright purple for a vibrant touch */
+	--light: #f1f5f9; /* Lighter text for better contrast */
+	--background-image: url(bg1.jpg);
 }
 
 * {
 	margin: 0;
 	box-sizing: border-box;
-	font-family: "Fira sans", sans-serif;
+	font-family: "Fira Sans", sans-serif;
 }
 
 body {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	color: #FFF;
+	color: var(--light);
 	background-color: var(--dark);
+	background-image: var(--background-image);
 }
 
 header {
@@ -29,15 +31,18 @@ header {
 	margin: 0 auto;
 }
 
-header h1{ 
+header h1 { 
 	font-size: 2.5rem;
 	font-weight: 300;
-	color: var(--grey);
+	font-family: 'Arial Black', sans-serif;
 	margin-bottom: 1rem;
+	color: var(--pink); /* Highlight header title */
+	text-align: center;
 }
 
+
 #new-task-form {
-	display: flex;;
+	display: flex;
 }
 
 input, button {
@@ -53,8 +58,9 @@ input, button {
 	padding: 1rem;
 	border-radius: 1rem;
 	margin-right: 1rem;
-	color: var(--light);
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	font-size: 1.25rem;
+	color: var(--light);
 }
 
 #new-task-input::placeholder {
@@ -73,11 +79,11 @@ input, button {
 }
 
 #new-task-submit:hover {
-	opacity: 0.8;
+	opacity: 0.9;
 }
 
 #new-task-submit:active {
-	opacity: 0.6;
+	opacity: 0.7;
 }
 
 main {
@@ -94,8 +100,9 @@ main {
 .task-list h2 {
 	font-size: 1.5rem;
 	font-weight: 300;
-	color: var(--grey);
+	font-family: 'Times New Roman', Times, serif;
 	margin-bottom: 1rem;
+	color: var(--light); /* Matches overall text color */
 }
 
 #tasks .task {
@@ -105,6 +112,7 @@ main {
 	padding: 1rem;
 	border-radius: 1rem;
 	margin-bottom: 1rem;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
 .task .content {
@@ -152,5 +160,10 @@ main {
 }
 
 .task .actions .delete {
-	color: crimson;
+	color: #ef4444; /* Softer red for delete */
+	transition: 0.4s;
+}
+
+.task .actions .delete:hover {
+	color: #dc2626; /* Darker red on hover */
 }
